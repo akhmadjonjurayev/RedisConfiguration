@@ -40,7 +40,7 @@ namespace ConfigureRedis.Extension
             if (!string.IsNullOrEmpty(key))
             {
                 var data = JsonConvert.SerializeObject(value);
-                cache.SetData(key, Encoding.UTF8.GetBytes(data));
+                cache.Set(key, Encoding.UTF8.GetBytes(data));
             }
         }
 
@@ -51,7 +51,7 @@ namespace ConfigureRedis.Extension
                 if (!string.IsNullOrEmpty(key))
                 {
                     var data = JsonConvert.SerializeObject(value);
-                    await cache.SetDataAsync(key, data);
+                    await cache.SetAsync(key, Encoding.UTF8.GetBytes(data));
                 }
             }
             catch { throw; }

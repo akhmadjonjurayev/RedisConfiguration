@@ -87,7 +87,7 @@ namespace ConfigureRedis.Controllers
         }
 
         [HttpPost("staff")]
-        public IActionResult SetStaffData([FromBody]List<Staff> staffs,string key)
+        public IActionResult SetStaffData([FromBody]List<Staff> staffs,[FromQuery]string key)
         {
             try
             {
